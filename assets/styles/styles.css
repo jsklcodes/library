@@ -9,7 +9,7 @@
   --baby-pink: hsl(0, 64%, 87%);
   --chocolate-cosmos: hsl(0, 63%, 20%);
   --royal-orange: hsl(24, 90%, 61%);
-  
+
   --border-radius: 0.4rem;
 
   font-size: 62.5%;
@@ -60,4 +60,20 @@ button {
   position: absolute;
   white-space: nowrap;
   width: 1px;
+}
+
+/* ==== buttons ==== */
+.button {
+  font-weight: 600;
+  transition: scale 0.3s ease;
+}
+
+.button:hover {
+  scale: 0.98;
+  transition: scale 0.3s ease;
+}
+
+.button--card {
+  border: 0.2rem dashed var(--chinese-silver);
+  color: var(--quick-silver);
 }
