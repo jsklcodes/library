@@ -78,6 +78,18 @@ button {
   color: var(--quick-silver);
 }
 
+.button--close {
+  display: grid;
+  padding: 0.2rem;
+  font-size: 1.6rem;
+  color: var(--quick-silver);
+}
+
+.button--primary {
+  background-color: #f58840;
+  color: var(--white);
+}
+
 /* ==== library ==== */
 .library {
   display: grid;
@@ -87,4 +99,54 @@ button {
   gap: 1.6rem;
 
   padding: 2rem;
+}
+
+/* ==== modal ==== */
+.overlay {
+  display: none;
+  place-items: center;
+  position: absolute;
+  inset: 0;
+  background-color: hsla(var(--bright-gray), 0.5);
+}
+
+.overlay--active {
+  display: grid;
+}
+
+.modal {
+  display: grid;
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  width: min(38rem, 90%);
+}
+
+.modal__header {
+  justify-self: end;
+}
+
+.form {
+  display: grid;
+  gap: 2rem;
+}
+
+.form__controls {
+  display: grid;
+  gap: 1.6rem;
+  border: none;
+}
+
+.form__group {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.form__control {
+  background-color: hsl(var(--bright-gray), 0.5);
+}
+
+.form__control:not([type='checkbox']) {
+  width: 100%;
 }
