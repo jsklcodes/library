@@ -1,0 +1,63 @@
+/* ==== base styles ==== */
+:root {
+  --white: hsl(0, 0%, 100%);
+  --bright-gray: 0, 0%, 93%;
+  --quick-silver: hsl(0, 0%, 64%);
+  --chinese-silver: hsl(0, 0%, 80%);
+  --tea-green: hsl(120, 64%, 87%);
+  --lincoln-green: hsl(120, 63%, 20%);
+  --baby-pink: hsl(0, 64%, 87%);
+  --chocolate-cosmos: hsl(0, 63%, 20%);
+  --royal-orange: hsl(24, 90%, 61%);
+  
+  --border-radius: 0.4rem;
+
+  font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui,
+    helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial,
+    sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.5;
+
+  background-color: hsla(var(--bright-gray), 1);
+}
+
+input,
+button {
+  border: none;
+  outline: none;
+  font: inherit;
+  border-radius: var(--border-radius);
+  padding: 0.5rem 1.2rem;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* ==== utils ==== */
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
