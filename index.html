@@ -20,6 +20,48 @@
     <button class="button button--card" id="open-modal-button">Add a new book</button>
   </main>
 
+  <div class="overlay" id="modal-overlay">
+    <div class="modal">
+      <header class="modal__header">
+        <button class="button button--close" id="close-modal-button">
+          <i class="ph-bold ph-x"></i>
+        </button>
+      </header>
+      <div class="modal__body">
+        <form class="form" id="add-book-form">
+          <h2>Add a new book</h2>
+
+          <fieldset class="form__controls">
+            <div class="form__group">
+              <label for="book-title" class="sr-only">Title of the book</label>
+              <input type="text" class="form__control" name="book-title" id="book-title"
+                placeholder="Title of the book">
+            </div>
+
+            <div class="form__group">
+              <label for="book-author" class="sr-only">Author of the book</label>
+              <input type="text" class="form__control" name="book-author" id="book-author"
+                placeholder="Author of the book">
+            </div>
+
+            <div class="form__group">
+              <label for="book-pages" class="sr-only">Pages of the book</label>
+              <input type="number" class="form__control" name="book-pages" id="book-pages"
+                placeholder="Pages of the book">
+            </div>
+
+            <div class="form__group">
+              <input type="checkbox" class="form__control" name="book-status" id="book-status" checked>
+              <label for="book-status">Status of the book</label>
+            </div>
+          </fieldset>
+
+          <button class="button button--primary">Add new book</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
   <script src="assets/scripts/index.js"></script>
 </body>
 
