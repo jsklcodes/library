@@ -28,6 +28,15 @@ function Book(title, author, pages, read) {
   this.read = read;
 }
 
+function removeBook(id) {
+  const book = myLibrary.find(book => book.id === id);
+
+  myLibrary.splice(myLibrary.indexOf(book), 1);
+
+  const bookCard = document.querySelector(`.book-card[data-id="${book.id}"]`);
+  bookCard.remove();
+}
+
 function removeLibraryChildrenExceptFirst() {
   const children = library.children;
 
@@ -88,4 +97,16 @@ addBookForm.addEventListener('submit', event => {
   statusInput.checked = true;
 
   displayBooks(myLibrary);
+  listenBookCardEvents();
 });
+
+function listenBookCardEvents() {
+  const bookCards = document.querySelectorAll('.book-card');
+
+  bookCards.forEach(bookCard => {
+    const id = +bookCard.dataset.id;
+    const deleteButton = bookCard.querySelector('#delete-button');
+
+    listenClickEvent(deleteButton, _ => removeBook(id));
+  });
+}
