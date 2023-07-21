@@ -90,6 +90,16 @@ button {
   color: var(--white);
 }
 
+.button--status[data-status='Read'] {
+  background-color: var(--tea-green);
+  color: var(--lincoln-green);
+}
+
+.button--status[data-status='Not read yet'] {
+  background-color: var(--baby-pink);
+  color: var(--chocolate-cosmos);
+}
+
 /* ==== library ==== */
 .library {
   display: grid;
@@ -99,6 +109,30 @@ button {
   gap: 1.6rem;
 
   padding: 2rem;
+}
+
+/* ==== book-card ==== */
+.book-card {
+  display: grid;
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+}
+
+.book-card__header,
+.book-card__footer {
+  justify-self: end;
+  align-self: center;
+}
+
+.book-card__body {
+  display: grid;
+  align-self: center;
+  gap: 0.4rem;
+}
+
+.book-card__body span:first-child {
+  font-weight: 600;
 }
 
 /* ==== modal ==== */
