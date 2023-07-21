@@ -100,6 +100,20 @@ button {
   color: var(--chocolate-cosmos);
 }
 
+/* ==== header ==== */
+.header {
+  text-align: center;
+  padding-block: 3.2rem;
+  background-color: var(--white);
+  color: var(--royal-orange);
+  margin-bottom: 1.6rem;
+}
+
+.header__title {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
 /* ==== library ==== */
 .library {
   display: grid;
