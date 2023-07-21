@@ -46,18 +46,14 @@ function removeBook(id) {
   bookCard.remove();
 }
 
-function removeLibraryChildrenExceptFirst() {
-  const children = library.children;
-
-  for (let i = 1; i < children.length; i++) {
-    children[i].remove();
-  }
+function removeCardsFromDOM() {
+  const bookCards = document.querySelectorAll('.book-card');
+  bookCards.forEach(bookCard => bookCard.remove());
 }
 
 function addBookToLibrary(book) {
-  removeLibraryChildrenExceptFirst();
+  removeCardsFromDOM();
   myLibrary.push(book);
-  console.log(myLibrary);
 }
 
 function displayBooks(books) {
