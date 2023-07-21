@@ -42,6 +42,30 @@ function addBookToLibrary(book) {
   console.log(myLibrary);
 }
 
+function displayBooks(books) {
+  books.forEach(({ id, title, author, pages, read }) => {
+    const status = read ? 'Read' : 'Not read yet';
+    library.insertAdjacentHTML(
+      'beforeend',
+      `<div class="book-card" data-id="${id}">
+        <header class="book-card__header">
+          <button class="button button--close" id="delete-button">
+            <i class="ph-bold ph-x"></i>
+          </button>
+        </header>
+        <div class="book-card__body">
+          <span>${title}</span>
+          <span>${author}</span>
+          <span>${pages} pages</span>
+        </div>
+        <footer class="book-card__footer">
+          <button class="button button--status" id="toggle-status-button" data-status="${status}">${status}</button>
+        </footer>
+      </div>`
+    );
+  });
+}
+
 addBookForm.addEventListener('submit', event => {
   event.preventDefault();
 
@@ -62,4 +86,6 @@ addBookForm.addEventListener('submit', event => {
   authorInput.value = '';
   pagesInput.value = '';
   statusInput.checked = true;
+
+  displayBooks(myLibrary);
 });
