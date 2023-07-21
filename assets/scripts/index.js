@@ -28,6 +28,15 @@ function Book(title, author, pages, read) {
   this.read = read;
 }
 
+Book.prototype.toggleReadStatus = function (book, toggleStatusButton) {
+  book.read = !book.read;
+
+  const status = book.read ? 'Read' : 'Not read yet';
+
+  toggleStatusButton.dataset.status = status;
+  toggleStatusButton.textContent = status;
+};
+
 function removeBook(id) {
   const book = myLibrary.find(book => book.id === id);
 
@@ -106,7 +115,12 @@ function listenBookCardEvents() {
   bookCards.forEach(bookCard => {
     const id = +bookCard.dataset.id;
     const deleteButton = bookCard.querySelector('#delete-button');
+    const toggleStatusButton = bookCard.querySelector('#toggle-status-button');
 
     listenClickEvent(deleteButton, _ => removeBook(id));
+    listenClickEvent(toggleStatusButton, _ => {
+      const book = myLibrary[id];
+      book.toggleReadStatus(book, toggleStatusButton);
+    });
   });
 }
