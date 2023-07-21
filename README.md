@@ -17,6 +17,9 @@ This is a solution to The Odin Project's [Library Project](https://www.theodinpr
 <img src="assets/images/screenshots/screenshot-1.png">
 Library on desktop
 
+<img src="assets/images/screenshots/screenshot-3.png">
+Modal to add books on desktop
+
 &nbsp;
 
 <img src="assets/images/screenshots/screenshot-2.png" width="400">
