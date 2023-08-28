@@ -20,22 +20,24 @@ let myLibrary = [];
 
 let id = myLibrary.length;
 
-function Book(title, author, pages, read) {
-  this.id = id++;
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
+class Book {
+  constructor(title, author, pages, read) {
+    this.id = id++;
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+  }
+
+  toggleReadStatus(book, toggleStatusButton) {
+    book.read = !book.read;
+
+    const status = book.read ? 'Read' : 'Not read yet';
+
+    toggleStatusButton.dataset.status = status;
+    toggleStatusButton.textContent = status;
+  }
 }
-
-Book.prototype.toggleReadStatus = function (book, toggleStatusButton) {
-  book.read = !book.read;
-
-  const status = book.read ? 'Read' : 'Not read yet';
-
-  toggleStatusButton.dataset.status = status;
-  toggleStatusButton.textContent = status;
-};
 
 function removeBook(id) {
   const book = myLibrary.find(book => book.id === id);
